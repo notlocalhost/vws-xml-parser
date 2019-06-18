@@ -568,6 +568,7 @@ class Parser:
                 self.__points[1] = self.__points[0]
                 self.__points[0] = Element.NONE if o[3] is None else Element.child(self.__root, o[3])
                 if self.__points[0] is None:
+                    self.__finished = True
                     self.__handler.join()
                 return
 
